@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace MvcMovie.Controllers
@@ -34,4 +35,16 @@ namespace MvcMovie.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
+    /*public class HttpRequest
+    {
+        public async Task<string> getHttp()
+        {
+            var client = new HttpClient();
+
+            var result = await client.GetAsync("http://webcode.me");
+
+            return result;
+        }
+    }*/
 }

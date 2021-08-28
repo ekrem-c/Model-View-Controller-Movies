@@ -2,7 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
+@using System.Net.Http
+
+@{
+    var client = new HttpClient();
+
+    var result = await client.GetStringAsync("http://webcode.me");
+}
+
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome</h1>   
 </div>
+
+
+<h4>The response from html request is:</h4>
+@result
